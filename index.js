@@ -43,6 +43,8 @@ const atomNames = [
 	"カルシウム"
 ]; //元素名の定義
 
+const numberOfAtom = atomSymbols.length;
+
 const getRandom = (min, max) => {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 } //乱数生成
@@ -51,7 +53,7 @@ const displayAtom = () => {
 	let randomAtomNums = [];
 	for (let i = 0; i <= 3; i++) {
 		while(true) {
-			let random = Math.floor(getRandom(0, 19));
+			let random = Math.floor(getRandom(0, numberOfAtom-1));
 			if(!randomAtomNums.includes(random)){
 				randomAtomNums.push(random);
 				break;
