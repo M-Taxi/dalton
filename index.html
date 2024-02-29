@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>Dalton</title>
+		<link rel="stylesheet" href="style.css">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+	</head>
+	<body onload="displayAtom();">
+		<nav>
+			<h1>Dalton</h1>
+		</nav>
+		<section class="quiz">
+			<div class="elementNameBox">
+				<h1 id="elementName"></h1>
+			</div>
+			<div class="choices">
+				<button class="choice" id="choice0" onclick="answer(0)">First</button><br>
+				<button class="choice" id="choice1" onclick="answer(1)">Second</button><br>
+				<button class="choice" id="choice2" onclick="answer(2)">Third</button><br>
+				<button class="choice" id="choice3" onclick="answer(3)">Forth</button>
+			</div>
+		</section>
+		<script src="index.js"></script>
+	</body>
+</html>
