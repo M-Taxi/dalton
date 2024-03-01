@@ -11,6 +11,8 @@ nav {
 	padding: 20px;
 	background-color: #eeeeee;
 	font-size: 20px;
+	display: flex;
+	justify-content: space-between;
 }
 .quiz {
 	padding: 5%;
