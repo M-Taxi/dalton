@@ -1,4 +1,4 @@
-const atomSymbols = [
+const atomSymbolList = [
 	"H",
 	"He",
 	"Li",
@@ -118,7 +118,7 @@ const atomSymbols = [
 	"Ts",
 	"Og"
 ]; //元素記号の定義
-const atomNames = [
+const atomNameList = [
 	"水素",
 	"ヘリウム",
 	"リチウム",
@@ -239,13 +239,15 @@ const atomNames = [
 	"オガネソン"
 ]; //元素名の定義
 
-const numberOfAtom = atomSymbols.length;
+let atomSymbols = atomSymbolList;
+let atomNames = atomNameList;
 
 const getRandom = (min, max) => {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 } //乱数生成
 
 const displayAtom = () => {
+	const numberOfAtom = atomSymbols.length;
 	let randomAtomNums = [];
 	for (let i = 0; i <= 3; i++) {
 		while(true) {
