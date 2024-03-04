@@ -13,6 +13,7 @@ nav {
 	font-size: 20px;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	position: sticky;
 	top: 0;
 }
@@ -67,6 +68,13 @@ nav {
 @media (max-width:920px) {
 	nav {
 		display: flex;
+		font-size: 15px;
+	}
+	nav h1 {
+		padding-right: 30px;
+	}
+	#level {
+		width: 100%;
 	}
 	.quiz {
 		padding: 0;
