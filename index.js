@@ -1,4 +1,4 @@
-const atomSymbols = [
+const atomSymbolList = [
 	"H",
 	"He",
 	"Li",
@@ -18,9 +18,107 @@ const atomSymbols = [
 	"Cl",
 	"Ar",
 	"K",
-	"Ca"
+	"Ca",
+	"Sc",
+	"Ti",
+	"V",
+	"Cr",
+	"Mn",
+	"Fe",
+	"Co",
+	"Ni",
+	"Cu",
+	"Zn",
+	"Ga",
+	"Ge",
+	"As",
+	"Se",
+	"Br",
+	"Kr",
+	"Rb",
+	"Sr",
+	"Y",
+	"Zr",
+	"Nb",
+	"Mo",
+	"Tc",
+	"Ru",
+	"Rh",
+	"Pd",
+	"Ag",
+	"Cd",
+	"In",
+	"Sn",
+	"Sb",
+	"Te",
+	"I",
+	"Xe",
+	"Cs",
+	"Ba",
+	"La",
+	"Ce",
+	"Pr",
+	"Nd",
+	"Pm",
+	"Sm",
+	"Eu",
+	"Gd",
+	"Tb",
+	"Dy",
+	"Ho",
+	"Er",
+	"Tm",
+	"Yb",
+	"Lu",
+	"Hf",
+	"Ta",
+	"W",
+	"Re",
+	"Os",
+	"Ir",
+	"Pt",
+	"Au",
+	"Hg",
+	"Tl",
+	"Pb",
+	"Bi",
+	"Po",
+	"At",
+	"Rn",
+	"Fr",
+	"Ra",
+	"Ac",
+	"Th",
+	"Pa",
+	"U",
+	"Np",
+	"Pu",
+	"Am",
+	"Cm",
+	"Bk",
+	"Cf",
+	"Es",
+	"Fm",
+	"Md",
+	"No",
+	"Lr",
+	"Rf",
+	"Db",
+	"Sg",
+	"Bh",
+	"Hs",
+	"Mt",
+	"Ds",
+	"Rg",
+	"Cn",
+	"Nh",
+	"Fl",
+	"Mc",
+	"Lv",
+	"Ts",
+	"Og"
 ]; //元素記号の定義
-const atomNames = [
+const atomNameList = [
 	"水素",
 	"ヘリウム",
 	"リチウム",
@@ -40,16 +138,146 @@ const atomNames = [
 	"塩素",
 	"アルゴン",
 	"カリウム",
-	"カルシウム"
+	"カルシウム",
+	"スカンジウム",
+	"チタン",
+	"バナジウム",
+	"クロム",
+	"マンガン",
+	"鉄",
+	"コバルト",
+	"ニッケル",
+	"銅",
+	"亜鉛",
+	"ガリウム",
+	"ゲルマニウム",
+	"ヒ素",
+	"セレン",
+	"臭素",
+	"クリプトン",
+	"ルビジウム",
+	"ストロンチウム",
+	"イットリウム",
+	"ジルコニウム",
+	"ニオブ",
+	"モリブデン",
+	"テクネチウム",
+	"ルテニウム",
+	"ロジウム",
+	"パラジウム",
+	"銀",
+	"カドミウム",
+	"インジウム",
+	"スズ",
+	"アンチモン",
+	"テルル",
+	"ヨウ素",
+	"キセノン",
+	"セシウム",
+	"バリウム",
+	"ランタン",
+	"セリウム",
+	"プラセオジム",
+	"ネオジム",
+	"プロメチウム",
+	"サマリウム",
+	"ユウロピウム",
+	"ガドリニウム",
+	"テルビウム",
+	"ジスプロシウム",
+	"ホルミウム",
+	"エルビウム",
+	"ツリウム",
+	"イッテルビウム",
+	"ルテチウム",
+	"ハフニウム",
+	"タンタル",
+	"タングステン",
+	"レニウム",
+	"オスミウム",
+	"イリジウム",
+	"白金",
+	"金",
+	"水銀",
+	"タリウム",
+	"鉛",
+	"ビスマス",
+	"ポロニウム",
+	"アスタチン",
+	"ラドン",
+	"フランシウム",
+	"ラジウム",
+	"アクチニウム",
+	"トリウム",
+	"プロトアクチニウム",
+	"ウラン",
+	"ネプツニウム",
+	"プロトニウム",
+	"アメリシウム",
+	"キュリウム",
+	"バークリウム",
+	"カリフォルニウム",
+	"アインスタイニウム",
+	"フェルミウム",
+	"メンデレビウム",
+	"ノーベリウム",
+	"ローレンシウム",
+	"ラザホージウム",
+	"ドブニウム",
+	"シーボーギウム",
+	"ボーリウム",
+	"ハッシウム",
+	"マイトネリウム",
+	"ダームスタチウム",
+	"レントゲニウム",
+	"コペルニシウム",
+	"ニホニウム",
+	"フレロビウム",
+	"モスコビウム",
+	"リバモリウム",
+	"テネシン",
+	"オガネソン"
 ]; //元素名の定義
 
-const numberOfAtom = atomSymbols.length;
+let atomSymbols = atomSymbolList;
+let atomNames = atomNameList;
 
 const getRandom = (min, max) => {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 } //乱数生成
 
+
 const displayAtom = () => {
+	switch (document.getElementById("level").value) {
+		case "level0":
+			atomSymbols = atomSymbolList.slice(0, 19);
+			atomNames = atomNameList.slice(0, 19);
+			break;
+		case "level1":
+			atomSymbols = atomSymbolList.slice(0, 19).concat(["Al", "Fe", "Cu", "Au", "Ag", "Zn"]);
+			atomNames = atomNameList.slice(0, 19).concat(["アルミニウム", "鉄", "銅", "金", "銀", "亜鉛"]);
+			break;
+		case "level2":
+			atomSymbols = atomSymbolList.slice(20, 55);
+			atomNames = atomNameList.slice(20, 55);
+			break;
+		case "level3":
+			atomSymbols = atomSymbolList.slice(56, 87);
+			atomNames = atomNameList.slice(56, 87);
+			break;
+		case "level4":
+			atomSymbols = atomSymbolList.slice(88, 102);
+			atomNames = atomNameList.slice(88, 102);
+			break;
+		case "level5":
+			atomSymbols = atomSymbolList.slice(103, 117);
+			atomNames = atomNameList.slice(103, 117);
+			break;
+		default:
+			break;
+	};
+	console.log(atomSymbols);
+	const numberOfAtom = atomSymbols.length;
 	let randomAtomNums = [];
 	for (let i = 0; i <= 3; i++) {
 		while(true) {

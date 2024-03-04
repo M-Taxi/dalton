@@ -7,9 +7,20 @@
 		<link rel="stylesheet" href="style.css">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 	</head>
-	<body onload="displayAtom();">
+	<body onload="displayAtom()">
 		<nav>
 			<h1>Dalton</h1>
+			<div id="changeLevel">
+				<select id="level" onchange="displayAtom()">
+					<option value="level0">レベル0 20番元素まで</option>
+					<option value="level1">レベル1 20番元素+必須金属元素</option>
+					<option value="level2">レベル2 21~56番元素</option>
+					<option value="level3">レベル3 57~88番元素まで</option>
+					<option value="level4">レベル4 89~103番元素まで</option>
+					<option value="level5">レベル5 104~118番元素まで</option>
+					<option value="all">すべての元素</option>
+				</select>
+			</div>
 		</nav>
 		<section class="quiz">
 			<div class="elementNameBox">
