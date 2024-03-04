@@ -322,6 +322,6 @@ const answer = (answer) => {
 	setTimeout(() => {
   		displayAtom();
   		theAnswer.style.backgroundColor = "";
-	}, 2000);
+	}, 1500);
 
 }
