@@ -246,7 +246,44 @@ const getRandom = (min, max) => {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 } //乱数生成
 
+const joinArray = (arr1, ...args) => {
+	let outputArray = arr1;
+	for (const arg of args) {
+		outputArray.concat(arg);
+	};
+	return outputArray;
+};
+
 const displayAtom = () => {
+	switch (document.getElementById("level").value) {
+		case "level0":
+			atomSymbols = atomSymbolList.slice(0, 19);
+			atomNames = atomNameList.slice(0, 19);
+			break;
+		case "level1":
+			atomSymbols = atomSymbolList.slice(0, 19).concat(["Al", "Fe", "Cu", "Au", "Ag", "Zn"]);
+			atomNames = atomNameList.slice(0, 19).concat(["アルミニウム", "鉄", "銅", "金", "銀", "亜鉛"]);
+			break;
+		case "level2":
+			atomSymbols = atomSymbolList.slice(20, 55);
+			atomNames = atomNameList.slice(20, 55);
+			break;
+		case "level3":
+			atomSymbols = atomSymbolList.slice(56, 87);
+			atomNames = atomNameList.slice(56, 87);
+			break;
+		case "level4":
+			atomSymbols = atomSymbolList.slice(88, 102);
+			atomNames = atomNameList.slice(88, 102);
+			break;
+		case "level5":
+			atomSymbols = atomSymbolList.slice(103, 117);
+			atomNames = atomNameList.slice(103, 117);
+			break;
+		default:
+			break;
+	};
+	console.log(atomSymbols);
 	const numberOfAtom = atomSymbols.length;
 	let randomAtomNums = [];
 	for (let i = 0; i <= 3; i++) {
