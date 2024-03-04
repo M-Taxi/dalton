@@ -246,13 +246,6 @@ const getRandom = (min, max) => {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 } //乱数生成
 
-const joinArray = (arr1, ...args) => {
-	let outputArray = arr1;
-	for (const arg of args) {
-		outputArray.concat(arg);
-	};
-	return outputArray;
-};
 
 const displayAtom = () => {
 	switch (document.getElementById("level").value) {
