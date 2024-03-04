@@ -21,6 +21,7 @@ nav {
 	border: none;
 	border-radius: 10px;
 	background-color: #fff;
+	transition: .2s;
 }
 #level:hover {
 	background-color: #ddd;
