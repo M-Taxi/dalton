@@ -274,6 +274,8 @@ const displayAtom = () => {
 			atomNames = atomNameList.slice(103, 117);
 			break;
 		default:
+			atomSymbols = atomSymbolList;
+			atomNames = atomNameList;
 			break;
 	};
 	console.log(atomSymbols);
