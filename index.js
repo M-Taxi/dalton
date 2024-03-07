@@ -323,7 +323,9 @@ const answer = (answer) => {
 	}
 	setTimeout(() => {
   		displayAtom();
-  		theAnswer.style.backgroundColor = "";
+  		for (i=0; i<3; i++) {
+  			document.getElementById("choice" + correctChoice).style.backgroundColor = "";
+  		}
 	}, 1500);
 
 }
